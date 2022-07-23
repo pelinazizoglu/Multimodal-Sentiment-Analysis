@@ -66,7 +66,7 @@ if __name__ == '__main__':
     image_data = image_data.reshape(1, 64, 64, 3, 1)
 
     # Load model
-    savedModel = load_model('EmotionRecognitionModel5.h5')
+    savedModel = load_model('EmotionRecognitionModel.h5')
     # savedModel.summary()
     print('Model Loaded!')
 
