@@ -222,5 +222,5 @@ if __name__ == '__main__':
     plt.show()
 
     # Save model
-    model.save('EmotionRecognitionModel5.h5')
+    model.save('EmotionRecognitionModel.h5')
     print('Model Saved!')
