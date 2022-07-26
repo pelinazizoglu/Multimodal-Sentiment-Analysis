@@ -11,12 +11,12 @@ def load_dataset(path):
     # Extract mfcc
     mfcc_features = librosa.feature.mfcc(y=audio, sr=sample_rate, n_mfcc=40)
     # Extract melspectrogram
-    mel_features = librosa.feature.melspectrogram(y=audio, sr=sample_rate, n_mels=40)
+    #mel_features = librosa.feature.melspectrogram(y=audio, sr=sample_rate, n_mels=40)
     # In order to find out scaled feature, do mean of transpose of value
     mfcc_scaled_features = np.mean(mfcc_features.T, axis=0)
-    mel_scaled_features = np.mean(mel_features.T, axis=0)
+    #mel_scaled_features = np.mean(mel_features.T, axis=0)
     audios.append(mfcc_scaled_features)
-    audios.append(mel_scaled_features)
+    #audios.append(mel_scaled_features)
     return audios
 
 
@@ -59,7 +59,7 @@ if __name__ == '__main__':
     audio_data = load_dataset(audio_path)
 
     audio_data = np.array(audio_data)
-    audio_data = audio_data.reshape(1, 80, 1)
+    audio_data = audio_data.reshape(1, 40, 1)
 
     image_data = video_to_frames(video_path)
     image_data = np.array(image_data)
